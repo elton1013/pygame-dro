@@ -19,6 +19,7 @@ class Menu(Painel):
                 'y'       : self.gap,
                 'largura' : 140,
                 'altura'  : 50,
+                'desloc'  : self.render_pos,
                 }
 
         for pos, texto in enumerate(self.lista_de_botoes):
@@ -30,9 +31,20 @@ class Menu(Painel):
 
 
 class MenuTrabalho(Menu):
-    lista_de_botoes = ('Configurar', 'Fechar', 'Desligar')
+    lista_de_botoes = ('Configurar',)
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+        self.tamanho    = (240, 60)
+        self.surface    = pygame.Surface(self.tamanho)
+        self.render_pos = (640 - self.tamanho[0], 0)
+
+        self.painelConfig()
+        self.botoesConfig()
+        self.renderImg()
 
 
 class MenuConfiguracao(Menu):
-    lista_de_botoes = ('Salvar', 'Voltar')
+    lista_de_botoes = ('Salvar', 'Voltar', 'Fechar', 'Desligar')
 

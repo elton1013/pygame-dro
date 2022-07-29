@@ -6,8 +6,8 @@ from  .painel import Painel as Painel
 
 class ListaReferencias(Painel):
     def __init__(self, **kwargs):
-        self.tamanho    = (400, 420)
-        self.render_pos = (0, 60)
+        self.tamanho    = (400, 480)
+        self.render_pos = (0, 0)
 
         super().__init__(**kwargs)
 

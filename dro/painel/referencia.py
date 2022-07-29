@@ -6,7 +6,7 @@ from  .painel import Painel as Painel
 
 class Refe(Painel):
     def __init__(self, etiqueta, **kwargs):
-        self.tamanho        = (386, 65)
+        self.tamanho        = (386, 64)
         self.surface_select = pygame.Surface(self.tamanho)
         self.render_pos     = (self.gap + 2, 0)
         self.etiqueta       = etiqueta

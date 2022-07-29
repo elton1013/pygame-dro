@@ -8,8 +8,8 @@ class Caderno(Painel):
     botao_func = ('-', '+')
 
     def __init__(self, **kwargs):
-        self.tamanho    = (400, 420)
-        self.render_pos = (0, 60)
+        self.tamanho    = (400, 480)
+        self.render_pos = (0, 0)
         super().__init__(**kwargs)
 
         self.setPaginacao()
@@ -20,12 +20,12 @@ class Caderno(Painel):
                 self.gap,
                 self.gap,
                 self.tamanho[0] - 2 * self.gap,
-                338)
+                398)
 
         self.render_pontos = [
-                self.render_pos[1] + 2 + self.gap + y * 67
+                self.render_pos[1] + 2 + self.gap + y * 66
                 for y in
-                range(0, 5)
+                range(0, 6)
                 ]
 
 
@@ -103,7 +103,7 @@ class Modificador(Caderno):
                 self.gap,
                 self.gap,
                 self.tamanho[0] - 2 * self.gap,
-                338)
+                398)
 
         self.etiqueta_refe_pos = (2 * self.gap, 2 * self.gap)
 
