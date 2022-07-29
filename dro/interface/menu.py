@@ -11,21 +11,12 @@ class MenuTrabalho(Interface):
         self.paineis['menu'] = menu_trabalho
 
         self.menu.botoes['Configurar'].comando = self.configurar
-        self.menu.botoes['Fechar'].comando     = self.fechar
-        self.menu.botoes['Desligar'].comando   = self.desligar
 
     
     def configurar(self):
         self.sistema.area_trabalho = 'configurar'
     
 
-    def fechar(self):
-        self.sistema.correr = False
-
-
-    def desligar(self):
-        self.sistema.setDesligar()
-        self.fechar()
 
 
 ##menu de cabeçalho
@@ -36,8 +27,10 @@ class MenuConfig(Interface):
         self.menu = menu_config
         self.paineis['menu'] = menu_config
 
-        self.menu.botoes['Voltar'].comando = self.voltar
-        self.menu.botoes['Salvar'].comando = self.salvar
+        self.menu.botoes['Voltar'].comando   = self.voltar
+        self.menu.botoes['Salvar'].comando   = self.salvar
+        self.menu.botoes['Fechar'].comando   = self.fechar
+        self.menu.botoes['Desligar'].comando = self.desligar
 
 
     def voltar(self):
@@ -47,4 +40,13 @@ class MenuConfig(Interface):
     def salvar(self):
         self.sistema.saveVars()
         self.sistema.area_trabalho = 'trabalho'
+
+
+    def fechar(self):
+        self.sistema.correr = False
+
+
+    def desligar(self):
+        self.sistema.setDesligar()
+        self.fechar()
 

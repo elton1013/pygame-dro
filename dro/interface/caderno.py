@@ -46,11 +46,11 @@ class Caderno(Trabalho):
 
 
     def configPaginacao(self):
-        self.pagina_total = ceil(len(self.sistema.lista_referencias) / 5)
+        self.pagina_total = ceil(len(self.sistema.lista_referencias) / 6)
         self.pagina_atual = self.pagina_total
         self.caderno.setPaginacao(self.pagina_atual, self.pagina_total)
 
-        for pagina in emPaginasDe(self.sistema.lista_referencias, 5):
+        for pagina in emPaginasDe(self.sistema.lista_referencias, 6):
             for interface, pos_y in zip(pagina, self.caderno.render_pontos):
                 interface.painel.render_pos = (interface.painel.render_pos[0], pos_y)
 
@@ -62,7 +62,7 @@ class Caderno(Trabalho):
         if super().eventos(evento):
             return
 
-        for interface in pegarPagina(self.sistema.lista_referencias, 5, self.pagina_atual):
+        for interface in pegarPagina(self.sistema.lista_referencias, 6, self.pagina_atual):
             for botao in interface.painel.botoes.values():
                 if botao.click(evento):
                     return
@@ -71,6 +71,6 @@ class Caderno(Trabalho):
     def draw(self):
         super().draw()
 
-        for interface in pegarPagina(self.sistema.lista_referencias, 5, self.pagina_atual):
+        for interface in pegarPagina(self.sistema.lista_referencias, 6, self.pagina_atual):
             interface.draw()
 
