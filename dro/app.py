@@ -40,7 +40,6 @@ class App:
         #self.bandeiras        |= pygame.FULLSCREEN
         self.root              = pygame.display.set_mode(size = self.tamanho, flags = self.bandeiras)
         self.clock             = pygame.time.Clock()
-        #pygame.mouse.set_visible(False)
 
         self.paineis = {
                 'trabalho'      : PainelTrabalho(        root = self.root, tamanho = self.tamanho),
