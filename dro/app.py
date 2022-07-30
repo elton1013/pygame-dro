@@ -105,6 +105,8 @@ class App:
 
     def loop(self):
         while self.correr:
+            self.clock.tick(30)
+            
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.correr = False
@@ -116,8 +118,7 @@ class App:
             self.sensor.getLeitura()
             self.interfaces.get(self.area_trabalho, self.interfaces['trabalho']).rotina()
             self.interfaces.get(self.area_trabalho, self.interfaces['trabalho']).draw()
-            pygame.display.update()
-            self.clock.tick(30)
+            pygame.display.update()            
 
         pygame.quit()
 
